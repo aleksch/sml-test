@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  user-select: none;
+}
+.component {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  line-height: 16px;
+  user-select: none;
+  font-weight: 500;
+}
+
+.container input {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+  opacity: 1;
+}
+
+.container .checkmark:after {
+ 	top: 2px;
+	left: 2px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #000;
+}
+
+.switcher-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: .85rem;
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+.switcher-wrapper .with {
+  transition: all .3s;
+  order: 0;
+}
+.switcher-wrapper input {
+  order: 1;
+}
+.switcher-wrapper .without {
+  transition: all .3s;
+  order: 2;
+}
+
+input.apple-switch {
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 36px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 50px;
+  transition: all .3s;
+}
+
+input.apple-switch:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: transparent;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: all .3s;
+}
+
+input.apple-switch:checked {
+  background: rgb(238, 180, 22);
+}
+
+input.apple-switch:checked:after {
+  left: 18px;
+}
+
+input.apple-switch ~ .without,
+input.apple-switch:checked ~ .with {
+  color: rgba(0, 0, 0, .3);
+}
+
+input.apple-switch:checked ~ .without {
+  color: #000;
+}
+
+.input-wrapper {
+  padding-left: 20px;
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.input-wrapper input {
+  height: 28px;
+  width: 160px;
+  padding: 0 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.info {
+  user-select: text;
+  background-color: #fbf3dc;
+  display: inline-block;
+  vertical-align: top;
+  flex-direction: column;
+  padding: 32px;
+  margin-top: 16px;
+  transition: opacity .3s;
+}
+
+.info.hide {
+  opacity: 0;
+}
+
+.info-item span {
+  font-weight: 700;
+}
+
+.tooltip-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #cfcfcf;
+  margin-left: 8px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.tooltip-icon:after {
+  content: 'i';
+}
+.tooltip-icon.show:after {
+  content: 'x';
+}
+
+.tooltip-body {
+  z-index: 1;
+  position: absolute;
+  top: 28px;
+  left: 8px;
+  background-color: #5e6cab;
+  width: 220px;
+  padding: 16px;
+  font-size: .8rem;
+  color: #fff;
+  line-height: 1.2rem;
+  font-weight: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.tooltip-body:before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 0 16px 16px;
+  border-color: transparent transparent transparent #5e6cab;
+}
+
+.tooltip-icon:hover .tooltip-body,
+.tooltip-icon.show .tooltip-body {
+  opacity: 1;
+  pointer-events: all;
+}

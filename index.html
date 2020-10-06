@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="component">
+    <div class="wrapper">
+      <label class="container">Оклад за месяц
+        <input type="radio" checked="checked" name="radio" data-name="month">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">МРОТ
+        <input type="radio" name="radio" data-name="mrot">
+        <span class="checkmark"></span>
+        <div class="tooltip-icon">
+          <div class="tooltip-body">МРОТ - минимальный размер оплаты труда. Разный для разных регионов.</div>
+        </div>
+      </label>
+      <label class="container">Оплата за день
+        <input type="radio" name="radio" data-name="day">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Оплата за час
+        <input type="radio" name="radio" data-name="hour">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div>
+      <label class="switcher-wrapper">
+        <input class="apple-switch" checked type="checkbox" name="switcher">
+        <div class="with">Указать с НДФЛ&nbsp;</div>
+        <div class="without">&nbsp;Без НДФЛ</div>
+      </label>
+    </div>
+    <div class="input-wrapper">
+      <input type="text" value="40 000"> ₽
+    </div>
+    <div class="info">
+      <div class="info-item"><span class="pure">40 000 ₽</span> сотрудник будет получать на руки</div>
+      <br>
+      <div class="info-item"><span class="tax">5 977 ₽</span> НДФЛ, 13% от оклада</div>
+      <br>
+      <div class="info-item"><span class="common">45 977 ₽</span> за сотрудника в месяц</div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
